@@ -1,0 +1,13 @@
+Given an array/list of integers.
+You need to find the largest value and the smallest value in the array.
+Finally, you need to return the difference between the two values.
+
+def highAndLow(arr):
+    high = arr[0]
+    low = arr[0]
+    for i in arr:
+       if i < low:
+          low = i
+       if i > high:
+          high = i
+    return(high - low)

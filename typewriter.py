@@ -8,11 +8,6 @@ username = ""
 password = ""
 term = Terminal()
 def typewriter(message, speed = 0.1, pause = 1):
-    '''
-    Info: this function types out string a
-    :param message: takes a string
-    :return: types out the string
-    '''
     for char in message:
         sys.stdout.write(f'\u001b[92m{char}')
         sys.stdout.flush
@@ -23,11 +18,11 @@ def typewriter(message, speed = 0.1, pause = 1):
 def dif_select():
     pass
 def check_password(attempts = 0):
-    typewriter(f"Please enter your password:\n")
+    typewriter(f"\nPlease enter your password: ")
     password = input()
-    typewriter("Please confirm your password:\n")
+    typewriter("\nPlease confirm your password: ")
     pass_check = input()
-    if attempts > 2:
+    if attempts >= 2:
         typewriter("Haxor!")
         return
     if pass_check != password:
@@ -73,10 +68,10 @@ for x in range(15):
     z = MemoryChunk()
     test_dump.append([y.location, y.string, z.location, z.string])
 term_startup()
-
+username = input('\nUSERNAME: ')
+typewriter(f"Hello {username}\n")
 typewriter(tabulate(test_dump), 0.01, 0.05)
-username = input()
-print(f"Hello {username}\n")
+
 check_password()
 typewriter("Have a nice day!\n.\n.\n...\n You're still here?\n There's nothing left...\nThat's the app.\n\n\n\n\n\n\n\n\n\n\n If you aren't going to shut it down.....\nI guess I wi")
 print("\n-------------------------------")
